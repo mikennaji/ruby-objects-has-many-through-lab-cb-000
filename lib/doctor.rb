@@ -17,17 +17,11 @@ attr_accessor :name
   end
 
   def appointments
-     resulting_array = []
-     Appointment.all.each do |appointment|
-       if appointment.doctor == self
-         resulting_array << appointment
-       end
-     end
-     resulting_array
-   end
+   Appointment.all.select{|aa| aa.doctor == self}
+ end
 
  def patients
-   appointments.map{|appointment| appointment.patient}
+   appointments.collect{|appointment| appointment.patient}
  end
 
 
