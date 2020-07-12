@@ -21,7 +21,7 @@ attr_accessor :name
  end
 
  def patients
-   appointments.collect{|appointment| appointment.patient}
+   appointments.collect{|appointment| appointment.date}
  end
 
 
